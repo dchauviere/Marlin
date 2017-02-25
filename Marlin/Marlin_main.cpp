@@ -2067,6 +2067,7 @@ static void clean_up_after_endstop_or_probe_move() {
                                                    // Would a goto be less ugly?
       //while (!_TRIGGERED_WHEN_STOWED_TEST) { idle(); // would offer the opportunity
       // for a triggered when stowed manual probe.
+      if(!deploy) endstops.enable_z_probe( deploy );
     #endif
 
     #if ENABLED(Z_PROBE_SLED)
