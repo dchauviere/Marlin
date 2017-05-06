@@ -450,7 +450,7 @@
   #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-(DELTA_EFFECTOR_OFFSET)-(DELTA_CARRIAGE_OFFSET))
 
   // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
-  #define DELTA_PRINTABLE_RADIUS 80.0
+  #define DELTA_PRINTABLE_RADIUS 76.0
 
   // Delta calibration menu
   // uncomment to add three points calibration menu option.
@@ -534,7 +534,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {100, 100, 100, 86.36}  // default steps per unit for Kossel (GT2, 20 tooth)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 80, 86.36}  // default steps per unit for Kossel (GT2, 20 tooth)
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -631,7 +631,7 @@
 #define Z_PROBE_OFFSET_FROM_EXTRUDER -3.89  // Z offset: -below +above  [the nozzle]
 
 // X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED 4000
+#define XY_PROBE_SPEED 3000
 // Speed for the first approach when double-probing (with PROBE_DOUBLE_TOUCH)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 // Speed for the "accurate" probe of each point
@@ -663,11 +663,11 @@
   #define Z_PROBE_ALLEN_KEY_DEPLOY_3_Z Z_PROBE_ALLEN_KEY_DEPLOY_2_Z
   #define Z_PROBE_ALLEN_KEY_DEPLOY_3_FEEDRATE XY_PROBE_SPEED
 
-  #define Z_PROBE_ALLEN_KEY_STOW_DEPTH 20
+  #define Z_PROBE_ALLEN_KEY_STOW_DEPTH 16
   // Move the probe into position
   #define Z_PROBE_ALLEN_KEY_STOW_1_X -40.0
   #define Z_PROBE_ALLEN_KEY_STOW_1_Y 20.0
-  #define Z_PROBE_ALLEN_KEY_STOW_1_Z 24.0
+  #define Z_PROBE_ALLEN_KEY_STOW_1_Z 17.0
   #define Z_PROBE_ALLEN_KEY_STOW_1_FEEDRATE XY_PROBE_SPEED
   // Move the nozzle down further to push the probe into retracted position.
   #define Z_PROBE_ALLEN_KEY_STOW_2_X  Z_PROBE_ALLEN_KEY_STOW_1_X
@@ -884,7 +884,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-//#define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_BILINEAR
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -897,11 +897,11 @@
 
   // Set the number of grid points per dimension.
   // Works best with 5 or more points in each dimension.
-  #define ABL_GRID_POINTS_X 9
+  #define ABL_GRID_POINTS_X 7
   #define ABL_GRID_POINTS_Y ABL_GRID_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
-  #define DELTA_PROBEABLE_RADIUS (DELTA_PRINTABLE_RADIUS - 10)
+  #define DELTA_PROBEABLE_RADIUS (DELTA_PRINTABLE_RADIUS - 20)
   #define LEFT_PROBE_BED_POSITION -(DELTA_PROBEABLE_RADIUS)
   #define RIGHT_PROBE_BED_POSITION DELTA_PROBEABLE_RADIUS
   #define FRONT_PROBE_BED_POSITION -(DELTA_PROBEABLE_RADIUS)
@@ -961,7 +961,7 @@
 // For DELTA this is the top-center of the Cartesian print volume.
 //#define MANUAL_X_HOME_POS 0
 //#define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 204.70 // Distance between the nozzle to printbed after homing
+#define MANUAL_Z_HOME_POS 191.10 // Distance between the nozzle to printbed after homing
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
 //
@@ -995,7 +995,7 @@
 // M501 - reads parameters from EEPROM (if you need reset them after you changed them temporarily).
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //define this to enable EEPROM support
-//#define EEPROM_SETTINGS
+#define EEPROM_SETTINGS
 
 #if ENABLED(EEPROM_SETTINGS)
   // To disable EEPROM Serial responses and decrease program space by ~1700 byte: comment this out:
@@ -1178,7 +1178,7 @@
 //
 // :['JAPANESE', 'WESTERN', 'CYRILLIC']
 //
-#define DISPLAY_CHARSET_HD44780 JAPANESE
+#define DISPLAY_CHARSET_HD44780 WESTERN
 
 //
 // LCD TYPE
