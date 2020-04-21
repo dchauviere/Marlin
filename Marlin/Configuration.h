@@ -483,9 +483,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Ultimaker
-  #define DEFAULT_Kp 22.2
-  #define DEFAULT_Ki 1.08
-  #define DEFAULT_Kd 114
+  #define DEFAULT_Kp 37.41
+  #define DEFAULT_Ki 3.51
+  #define DEFAULT_Kd 99.62
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
@@ -878,7 +878,7 @@
  * Z Servo Probe, such as an endstop switch on a rotating arm.
  */
 #define Z_PROBE_SERVO_NR 0       // Defaults to SERVO 0 connector.
-#define Z_SERVO_ANGLES { 85, 0 } // Z Servo Deploy and Stow angles
+#define Z_SERVO_ANGLES { 10, 65 } // Z Servo Deploy and Stow angles
 
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
@@ -955,7 +955,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { -27, 0, -11.80 }
+#define NOZZLE_TO_PROBE_OFFSET { -35, 4, -8.10 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1092,10 +1092,10 @@
 
 // The size of the print bed
 #define X_BED_SIZE 300
-#define Y_BED_SIZE 300
+#define Y_BED_SIZE 280
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
+#define X_MIN_POS -4.00
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
@@ -2247,7 +2247,7 @@
 // (ms) Delay  before the next move will start, to give the servo time to reach its target angle.
 // 300ms is a good value but you can try less delay.
 // If the servo can't reach the requested position, increase it.
-#define SERVO_DELAY { 300 }
+#define SERVO_DELAY { 500 }
 
 // Only power servos during movement, otherwise leave off to prevent jitter
 #define DEACTIVATE_SERVOS_AFTER_MOVE
